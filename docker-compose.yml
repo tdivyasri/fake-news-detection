@@ -1,0 +1,12 @@
+version: '3.8'  # Define the version for compatibility
+
+services:
+  fake-news-detector:
+    build: .  # This tells Docker Compose to build the image from the Dockerfile in the current directory
+    container_name: fake-news-container  # The container name
+    ports:
+      - "5000:5000"  # Exposing port if needed, change according to your app's requirement
+    volumes:
+      - .:/app  # Mounts the current directory to the /app folder in the container
+    environment:
+      - ENV_VAR_NAME=value  # You can add any environment variables if needed
